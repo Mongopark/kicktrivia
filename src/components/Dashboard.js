@@ -6,9 +6,19 @@ import Frame3 from './image/Frame3.png'
 import Frame4 from './image/Frame4.png'
 import COLORS from './constants/colors';
 import User from './icon/User.png';
+import CustomButton from "./layouts/smallbutton";
 
 const Dashboard = () => {
     const [isNavbarVisible, setNavbarVisible] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+      setShowPassword(!showPassword);
+    };
+
+    const onSubmit = () => {
+      console.log("submit");
+     }
 
 //   const summonNav = () => {
 //     setNavbarVisible((prev) => !prev);
@@ -48,8 +58,14 @@ const Dashboard = () => {
     navbar.style.display = 'none';
   }
     }
-  return (<div className={`row ${isNavbarVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
-    <div className="dashboard col-12 col-lg-9 ms-lg-auto ms-3 p-5 h-100" style={{ backgroundColor: COLORS.primary, height: "100%", }}>
+
+
+
+
+
+
+  return (<div className={`dashboard row ms-3 p-5 h-100 w-100 ${isNavbarVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
+    <div className="col-12 col-lg-9 ms-lg-auto" style={{ backgroundColor: COLORS.primary, height: "100%", }}>
     
     {/* <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
         <i className="fas fa-bars text-light"></i></div> */}
@@ -70,15 +86,51 @@ const Dashboard = () => {
     <div className="container-fluid row">
 
 <div className="container row col-12 justify-content-center justify-content-md-between g-1 ms-auto">
-    <div className="row container-fluid my-2 my-md-0 bg-light rounded-3 col-sm-8 col-md-8">
-        Thank you Jesus
-   <div className="container-fluid my-2 my-md-0 fw-bold h3 align-self-end col-12">Protect what matters</div>
-    </div>
+   <div className="row container-fluid my-2 my-md-0 bg-light rounded-3 col-sm-8 col-md-8">
+  <div className="container-fluid col-7 align-items-between">
+  <div className="container-fluid pt-3 d-flex text-nowrap">
+    Your Wallet Balance <i className={`fas px-4 text-dark ${showPassword ? 'fa-eye-slash' : 'fa-eye'} text-light no-bother`} onClick={togglePasswordVisibility} style={{zIndex: 1000,}}></i>
+  </div>
+  <div className="container-fluid fw-bold">
+    {showPassword ? '$4500.99' : '****'}
+  </div>
+  <div className="d-flex mt-4 mb-2 mb-lg-0 smallbtn-cont" style={{ 
+  zIndex: 10,
+ }}>
+ <button
+      type="button"
+      className="btn p-1 smallbtn"
+      onClick={onSubmit}
+    ><span className="small text-nowrap text-light">Earn More</span>
+          </button>
+          <button
+      type="button"
+      className="btn p-1 mx-1 smallbtns"
+      onClick={onSubmit}
+    ><span className="small text-nowrap">Deposit</span>
+          </button>
+          <button
+      type="button"
+      className="btn p-1 smallbtns"
+      onClick={onSubmit}
+    ><span className="small text-nowrap">Withdraw</span>
+          </button>
+  </div>
+  </div>
+  <div className="container-fluid p-4 rounded-3 col-4 m-2" style={{ backgroundImage: 'linear-gradient(to bottom, #B86E9F, #FFFFFF)',
+  border: '1px solid #FF1975', // Add a white border with 2px thickness
+  zIndex: 1,
+ }}>
+  {/* Content for the second div */}
+</div>
+
+</div>
 
 
-    <div className="row container-fluid p-4 bg-light rounded-3 col-sm-8 col-md-4">
-        Thank you Jesus
-        <div className="container-fluid fw-bold h3 align-self-end col-12">Many means <br />to one goal</div>
+
+    <div className="row container-fluid p-4 bg-light rounded-3 col-sm-8 col-md-4 text-light">
+        Kick Trivia
+        <div className="container-fluid fw-bold h3 align-self-end col-12 text-light">Your Sport <br /> Quiz Platform</div>
     </div>
 </div>
 </div>

@@ -1,7 +1,7 @@
 # A React App called KickTrivia a sports quiz webapp
 
 # WebApp Link
-https://kicktrivia.netlify.app
+https://kicktrivia.vercel.app
 
 # Getting Started with Create React App
 

@@ -281,123 +281,31 @@ img.footer{
   /* Add other styling for your icon if needed */
 }
 
-
-
-
-/* TOGGLE SWITCH */
-div#checkbox{
-    display:block;
-}
-div.instruct{
-    /*padding-top:15px;
-    padding-left:145px;
-    font-weight:bolder;
-    float:right;*/
-}
-.switch{
-position:relative;
-/*display:inline-block;*/
-width: 60px;
-height:34px;
+.smallbtn-cont {
+  justify-content: space-between;
+  z-index: 1000;
 }
 
-.switch.input{
-opacity:0;
-width:0;
-height:0;
+.smallbtn {
+  z-index: 1000;
+  background-color: #FF1975;
 }
 
-.slider{
-position:absolute;
-cursor:pointer;
-top:0;
-left:0;
-right:0;
-bottom:0;
-background-color: #5c59c2;
--webkit-transition: .4s;
-transition: .4s;
+.smallbtn:hover {
+  z-index: 1000;
+  background-color: #FF1944;
 }
-.roller{
-    position:absolute;
-    cursor:pointer;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color: #5c59c2;
-    -webkit-transition: .4s;
-    transition: .4s;
-    }
-.slider:before{
-position:absolute;
-content: "";
-height:26px;
-width:26px;
-left:4px;
-bottom:4px;
-background-color:rgb(255, 255, 255);
--webkit-transition:.8s;
-transition: .8s;
-}
-.roller:before{
-    position:absolute;
-    content: "";
-    height:26px;
-    width:26px;
-    left:4px;
-    bottom:4px;
-    background-color:rgb(0, 0, 0);
-    -webkit-transition:.8s;
-    transition: .8s;
-    }
 
-input:checked + .slider{
-background-color:#8ac8c0;
+.smallbtns {
+  z-index: 1000;
+  background-color: #C8C8C8;
 }
-input:checked + .roller{
-    background-color:#8ac8c0;
-    }
-input:focus + .slider{
-box-shadow: 0 0 1px #8ac8c0;
+
+.smallbtns:hover {
+  z-index: 1000;
+  background-color: #FF1975;
+  color: #FFFFFF;
 }
-input:focus + .roller{
-    box-shadow: 0 0 1px #8ac8c0;
-    }
-input:checked + .slider:before{
--webkit-transition: translateX(26px);
--ms-transform: translateX(26px);
-transform: translateX(26px);
-}
-input:checked + .roller:before{
-    -webkit-transition: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-    }
-.slider.round{
-border-radius: 34px;
-}
-.roller.round{
-    border-radius: 34px;
-    }
-
-.slider.round:before{
-border-radius:50%;
-}
-.roller.round:before{
-    border-radius:50%;
-    }
-
-input[type="checkbox"]{
-    opacity:0;
-}
-/*div#checkbox{
-left:55em;
-}*/
-
-
-
-
 
 
 
