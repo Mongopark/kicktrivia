@@ -1,0 +1,595 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width:100%;
+  background-color: #060D1F;
+}
+
+.dashboard {
+    align-items: start;
+    margin-block-start: auto;
+    background-color: #060D1F;
+    height: 100%;
+  }
+
+  .user-icon {
+    width: 25px;
+    height:25px;
+  }
+
+  .heading {
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  .header{
+    border-right: 1px solid #6F6E6E;
+    width:20%;
+    padding:0em;
+    margin:0em;
+  }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+@media (max-width: 992px){
+  .header{
+    display: none;
+  }
+}
+
+@media(max-width:768px){
+    img.dropcoin{width:35%;
+justify-self: center;
+margin: auto;
+    }
+}
+@media(min-width:992px){
+    img.dropcoin{width:75%;
+justify-self: center;
+margin: auto;
+    }
+}
+nav.navbaby{
+    position:sticky;
+}
+img.store{
+    width:10em;
+    height:auto;
+}
+i.feather{
+    transform:rotate(135deg);
+}
+i.leaf{
+    transform:rotate(180deg);
+}
+img.coin{
+    width:10em;
+    height:10em;
+}
+img.bagofcoins{
+/*    position:absolute;*/
+    width:10em;
+    height:auto;
+}
+/*svg.svg{
+    z-index: 999;
+}*/
+/*#about .col-left .about-img {
+  position: relative;
+  border: 10px solid white;
+  border-radius: 10px 20px;
+  height: 100%;
+}
+#about .col-left .about-img::after {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 19px;
+  height: 98%;
+  width: 98%;
+  border: 7px solid #1ced61;
+  border-radius: 10px 20px;
+  z-index: -1;
+}*/
+/*  #about .about .col-right .about-img::after {
+    left: -45%;
+    top: 24px;
+    height: 98%;
+    border: 10px solid #1ced61;
+  }*/
+img.smallpic{
+    width:2em;
+    height:2em;
+    margin-top:1em;
+}
+div.smalltext{
+    font-size:0.5em;
+}
+div.lastcard{
+    margin-left:  1.5em;
+}
+div.cards{
+    height:17em;
+    overflow: hidden;
+}
+div.week{
+    overflow: hidden;
+}
+div.google{
+    margin:0em;
+}
+div.halfphone img{
+    width:10em;
+}
+img.download{
+    width:8em;
+    height:auto;
+}
+img.footer{
+    width:6em;
+    height:auto;
+    float:right;
+}
+
+
+
+
+
+
+/* ERROR PAGE START */
+/*  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}*/
+
+/* body {
+    background: linear-gradient(45deg, #8500ff, #5acaff);
+    height: 100vh;
+} */
+
+.errorpage {
+  margin: 5%;
+  padding: 2%; /* Adjust the padding to make it smaller */
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  max-width: 600px; /* Adjust the max-width to make it smaller */
+  position: static;
+  top: 0%; /* Adjust the top value to raise it up */
+  left: 10%;
+  right: 10%;
+  bottom: 0%; /* Adjust the bottom value accordingly */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("./css_img/bg_404.png") #151729;
+  box-shadow: inset 0 15px 30px rgba(255, 0, 166, 0.5), 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.errorpage .errordisplay {
+  padding: 2%; /* Adjust the padding to make it smaller */
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 70%;
+  max-width: 400px; /* Adjust the max-width to make it smaller */
+  text-align: center;
+}
+
+
+.errorpage .errordisplay h2 {
+    font-size: 18vw;
+    color: #fff;
+    line-height: 1em;
+}
+
+.errorpage .errordisplay h2 span {
+    color: #ff0562;
+}
+
+.errorpage .errordisplay h4 {
+    position: relative;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #111;
+    background: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    display: inline-block;
+    box-shadow: 0 0 10px #ff0562;
+}
+
+.errorpage .errordisplay p {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.errorpage .errordisplay .errorlink {
+    position: relative;
+    display: inline-block;
+    padding: 10px 25px;
+    background: #ff0562;
+    box-shadow: 0 0 10px #ff0562;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 25px;
+    border-radius: 25px;
+    border-bottom: 4px solid #d00d56;
+    font-weight: 600;
+}
+
+.errorpage .errordisplay .errorlink:hover {
+    background: #fff;
+    color: #ff0562;
+    box-shadow: 0 0 10px #fff;
+    border-bottom: 4px solid #999;
+}
+/* ERROR PAGE END */
+.form-control::placeholder {
+    color: #6F6E6E;
+  }
+
+  .no-bother {
+    border-radius: 0px;
+  }
+
+.play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* You can also use max-width and max-height to control the size of the image */
+}
+
+.base-icon {
+  max-width: fit-content;
+  max-height: fit-content;
+  margin: 10px;
+  /* You can also use max-width and max-height to control the size of the image */
+}
+
+.mysmallcard {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.playboy-card {
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.play-girl {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  /* Add other styling for your icon if needed */
+}
+
+.play-boy {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  /* Add other styling for your icon if needed */
+}
+
+
+
+
+/* TOGGLE SWITCH */
+div#checkbox{
+    display:block;
+}
+div.instruct{
+    /*padding-top:15px;
+    padding-left:145px;
+    font-weight:bolder;
+    float:right;*/
+}
+.switch{
+position:relative;
+/*display:inline-block;*/
+width: 60px;
+height:34px;
+}
+
+.switch.input{
+opacity:0;
+width:0;
+height:0;
+}
+
+.slider{
+position:absolute;
+cursor:pointer;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background-color: #5c59c2;
+-webkit-transition: .4s;
+transition: .4s;
+}
+.roller{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #5c59c2;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+.slider:before{
+position:absolute;
+content: "";
+height:26px;
+width:26px;
+left:4px;
+bottom:4px;
+background-color:rgb(255, 255, 255);
+-webkit-transition:.8s;
+transition: .8s;
+}
+.roller:before{
+    position:absolute;
+    content: "";
+    height:26px;
+    width:26px;
+    left:4px;
+    bottom:4px;
+    background-color:rgb(0, 0, 0);
+    -webkit-transition:.8s;
+    transition: .8s;
+    }
+
+input:checked + .slider{
+background-color:#8ac8c0;
+}
+input:checked + .roller{
+    background-color:#8ac8c0;
+    }
+input:focus + .slider{
+box-shadow: 0 0 1px #8ac8c0;
+}
+input:focus + .roller{
+    box-shadow: 0 0 1px #8ac8c0;
+    }
+input:checked + .slider:before{
+-webkit-transition: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+input:checked + .roller:before{
+    -webkit-transition: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    }
+.slider.round{
+border-radius: 34px;
+}
+.roller.round{
+    border-radius: 34px;
+    }
+
+.slider.round:before{
+border-radius:50%;
+}
+.roller.round:before{
+    border-radius:50%;
+    }
+
+input[type="checkbox"]{
+    opacity:0;
+}
+/*div#checkbox{
+left:55em;
+}*/
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+.nav-menu {
+    padding: 10px 0 0 0;
+  }
+  
+  .nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 170px,
+  }
+  
+  .nav-menu>ul>li {
+    position: relative;
+    white-space: nowrap;
+    width: 170px,
+  }
+  
+  .nav-menu a,
+  .nav-menu a:focus {
+    display: flex;
+    align-items: center;
+    color: #a8a9b4;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    transition: 0.3s;
+    font-size: 14px;
+    text-decoration: none;
+    width: 250px;
+  }
+  
+  .nav-menu a i,
+  .nav-menu a:focus i {
+    font-size: 14px;
+    padding-right: 10px;
+    color: #6f7180;
+    text-decoration: none;
+  }
+  
+  .nav-menu a:hover,
+  .nav-menu .active,
+  .nav-menu .active:focus,
+  .nav-menu li:hover>a {
+    text-decoration: none;
+    color: #6f7180;
+    background-color: rgba(208, 13, 86, 0.5);
+    border-radius: 8px;
+  }
+
+li.nav-item,
+li.nav-item:focus {
+    flex: 1;
+width: 150%;
+}
+
+.mycard {
+    max-width: 20px;
+    max-height: 20px;
+}
+  
+  /* .nav-menu a:hover i,
+  .nav-menu .active i,
+  .nav-menu .active:focus i,
+  .nav-menu li:hover>a i {
+    color: #34b7a7;
+  } */
+  
+  /* Mobile Navigation */
+  .mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    background-color: #34b7a7;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+  
+  .mobile-nav-active #header {
+    left: 0;
+  }
+  
+  
+
+
+  /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    transition: all ease-in-out 0.5s;
+    z-index: 9997;
+    transition: all 0.5s;
+    padding: 0 15px;
+    background: #060D1F;
+    overflow-y: auto;
+  }
+  
+  #header .profile img {
+    margin: 15px auto;
+    display: block;
+    width: 120px;
+  }
+  
+  #header .profile h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    -moz-text-align-last: center;
+    text-align-last: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #header .profile h1 a,
+  #header .profile h1 a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #header .profile .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+  
+  #header .profile .social-links a:hover {
+    background: #34b7a7;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+  /* Shapes.css *//* Dashboard.css */
+
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes confettiAnimation {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}

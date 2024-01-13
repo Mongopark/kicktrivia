@@ -1,0 +1,223 @@
+import React, {useState, useEffect} from 'react'
+import LeaderBoardImage from './image/leaderboard.jpg'
+import COLORS from './constants/colors';
+import LeaderGirl from './icon/LeaderGirl.png';
+import Medal from './icon/Medal.svg';
+
+const Dashboard = () => {
+    const [isNavbarVisible, setNavbarVisible] = useState(true);
+
+    //   const summonNav = () => {
+    //     setNavbarVisible((prev) => !prev);
+    //   };
+    
+      useEffect(() => {
+    const handleResize = () => {
+        const viewportWidth = window.innerWidth;
+        const navbar = document.getElementById('header');
+        if (viewportWidth >= 992) {
+          // If the screen size is larger than or equal to 992 pixels,
+          // ensure the navbar is visible.
+          setNavbarVisible(true);
+          navbar.style.display = 'block'
+        }
+        if (viewportWidth <= 992) {
+          // If the screen size is larger than or equal to 992 pixels,
+          // ensure the navbar is visible.
+          navbar.style.display = 'none'
+        }
+      };
+  
+      // Add event listener for window resize
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup the event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+      const summonNav = () => {
+          const navbar = document.getElementById('header');
+  
+    if (navbar.style.display === 'none' || navbar.style.display === '') {
+      navbar.style.display = 'block';
+    } else {
+      navbar.style.display = 'none';
+    }
+      }
+
+
+    const confettiShapes = Array.from({ length: 100 }, (_, index) => ({
+        left: `${Math.random() * 100}vw`,
+        animationDelay: `${Math.random()}s`,
+        backgroundColor: COLORS.confettiColors[Math.floor(Math.random() * COLORS.confettiColors.length)],
+        transform: `rotate(${Math.random() * 360}deg)`,
+      }));
+  return (
+<div className={`row ${isNavbarVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
+    <div className="dashboard col-12 col-lg-9 ms-lg-auto ms-3 p-5 h-100" style={{ backgroundColor: COLORS.primary, height: "100%", }}>
+    
+    {/* <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
+        <i className="fas fa-bars text-light"></i></div> */}
+        <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
+        <i className="fas fa-bars text-light"></i>
+      </div>
+          {/* Confetti background */}
+      <div className="confetti">
+        {confettiShapes.map((confettiShape, index) => (
+          <div
+            key={index}
+            className="confetti-shape"
+            style={{
+              position: 'absolute',
+              width: '10px',
+              height: '10px',
+              background: 'transparent',
+              transformOrigin: '50% 50%',
+              animation: 'confettiAnimation 5s infinite',
+              ...confettiShape,
+            }}
+          />
+        ))}
+      </div>
+
+<div className="heading">    
+    <div><span className="text-light">Hello Stella,</span></div>
+</div>
+<div className="d-flex heading">    
+    <span className="text-light small w-75 my-3">Welcome to the Leaderboard! Here's where champions are recognized. Check out the top performers, see who's dominating the trivia game, and strive to claim the throne. Can you climb to the highest ranks and become a trivia legend? Compete, conquer, and make your mark on the leaderboard today!</span>
+</div>
+
+
+
+<section className="bg-deeper mb-2 rounded-4">
+<img src={LeaderBoardImage} alt="Kick Logo" className="w-100 rounded-4"/>
+</section>  
+
+
+
+
+
+
+<div className="">
+      <div className="row">
+        {/* First Column */}
+        <div className="col-md-6">
+          <div className="container my-4 py-1 rounded-2" style={{ backgroundColor: COLORS.pink, }}>
+            <div className="card-body d-flex justify-content-between align-items-center" >
+              {/* Content for the first card */}
+              <div>
+              <span className="text-light small">01</span>
+              <img src={LeaderGirl} alt="Leader Girl Icon" className="rounded-4 px-3"/>
+              <span className="text-light small">Francis</span>
+              </div>
+              <span className="text-light small">1720pts</span>
+              <img src={Medal} alt="Medal Icon" className="rounded-4 px-5"/>
+            </div>
+          </div>
+          
+          <div className="container mb-4 py-1 rounded-2" style={{ backgroundColor: COLORS.pink, }}>
+            <div className="card-body d-flex justify-content-between align-items-center" >
+              {/* Content for the second card */}
+              <div>
+              <span className="text-light small">01</span>
+              <img src={LeaderGirl} alt="Leader Girl Icon" className="rounded-4 px-3"/>
+              <span className="text-light small">Francis</span>
+              </div>
+              <span className="text-light small">1720pts</span>
+              <img src={Medal} alt="Medal Icon" className="rounded-4 px-5"/>
+            </div>
+          </div>
+          
+          <div className="container mb-4 py-1 rounded-2" style={{ backgroundColor: COLORS.pink, }}>
+            <div className="card-body d-flex justify-content-between align-items-center" >
+              {/* Content for the third card */}
+              <div>
+              <span className="text-light small">01</span>
+              <img src={LeaderGirl} alt="Leader Girl Icon" className="rounded-4 px-3"/>
+              <span className="text-light small">Francis</span>
+              </div>
+              <span className="text-light small">1720pts</span>
+              <img src={Medal} alt="Medal Icon" className="rounded-4 px-5"/>
+            </div>
+          </div>
+          
+          <div className="container mb-2 py-1 rounded-2" style={{ backgroundColor: COLORS.pink, }}>
+            <div className="card-body d-flex justify-content-between align-items-center" >
+              {/* Content for the forth card */}
+              <div>
+              <span className="text-light small">01</span>
+              <img src={LeaderGirl} alt="Leader Girl Icon" className="rounded-4 px-3"/>
+              <span className="text-light small">Francis</span>
+              </div>
+              <span className="text-light small">1720pts</span>
+              <img src={Medal} alt="Medal Icon" className="rounded-4 px-5"/>
+            </div>
+          </div>
+        </div>
+
+
+
+        {/* Second Column */}
+        <div className="col-md-6">
+        <div className="container my-4 py-1 rounded-2" style={{ backgroundColor: COLORS.pink, }}>
+            <div className="card-body d-flex justify-content-between align-items-center" >
+              {/* Content for the first card */}
+              <div>
+              <span className="text-light small">01</span>
+              <img src={LeaderGirl} alt="Leader Girl Icon" className="rounded-4 px-3"/>
+              <span className="text-light small">Francis</span>
+              </div>
+              <span className="text-light small">1720pts</span>
+              <img src={Medal} alt="Medal Icon" className="rounded-4 px-5"/>
+            </div>
+          </div>
+          
+          <div className="container mb-4 py-1 rounded-2" style={{ backgroundColor: COLORS.pink, }}>
+            <div className="card-body d-flex justify-content-between align-items-center" >
+              {/* Content for the second card */}
+              <div>
+              <span className="text-light small">01</span>
+              <img src={LeaderGirl} alt="Leader Girl Icon" className="rounded-4 px-3"/>
+              <span className="text-light small">Francis</span>
+              </div>
+              <span className="text-light small">1720pts</span>
+              <img src={Medal} alt="Medal Icon" className="rounded-4 px-5"/>
+            </div>
+          </div>
+          
+          <div className="container mb-4 py-1 rounded-2" style={{ backgroundColor: COLORS.pink, }}>
+            <div className="card-body d-flex justify-content-between align-items-center" >
+              {/* Content for the third card */}
+              <div>
+              <span className="text-light small">01</span>
+              <img src={LeaderGirl} alt="Leader Girl Icon" className="rounded-4 px-3"/>
+              <span className="text-light small">Francis</span>
+              </div>
+              <span className="text-light small">1720pts</span>
+              <img src={Medal} alt="Medal Icon" className="rounded-4 px-5"/>
+            </div>
+          </div>
+          
+          <div className="container mb-2 py-1 rounded-2" style={{ backgroundColor: COLORS.pink, }}>
+            <div className="card-body d-flex justify-content-between align-items-center" >
+              {/* Content for the forth card */}
+              <div>
+              <span className="text-light small">01</span>
+              <img src={LeaderGirl} alt="Leader Girl Icon" className="rounded-4 px-3"/>
+              <span className="text-light small">Francis</span>
+              </div>
+              <span className="text-light small">1720pts</span>
+              <img src={Medal} alt="Medal Icon" className="rounded-4 px-5"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  )
+}
+
+export default Dashboard
+
