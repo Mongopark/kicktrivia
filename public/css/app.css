@@ -37,25 +37,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-
-
-@media (max-width: 992px){
-  .header{
-    display: none;
-  }
+.welcome-border {
+  border-right: 2px solid #FF1975;
 }
+
+
 
 @media(max-width:768px){
-    img.dropcoin{width:35%;
-justify-self: center;
-margin: auto;
-    }
+  .welcome-border {
+    border-right: 2px solid #060D1F;
+  }
 }
 @media(min-width:992px){
-    img.dropcoin{width:75%;
-justify-self: center;
-margin: auto;
+    .header{
+      display: none;
     }
 }
 nav.navbaby{
@@ -283,26 +278,24 @@ img.footer{
 
 .smallbtn-cont {
   justify-content: space-between;
-  z-index: 1000;
+  z-index: 11;
 }
 
 .smallbtn {
-  z-index: 1000;
+  z-index: 12;
   background-color: #FF1975;
 }
 
 .smallbtn:hover {
-  z-index: 1000;
   background-color: #FF1944;
 }
 
 .smallbtns {
-  z-index: 1000;
+  z-index: 12;
   background-color: #C8C8C8;
 }
 
 .smallbtns:hover {
-  z-index: 1000;
   background-color: #FF1975;
   color: #FFFFFF;
 }

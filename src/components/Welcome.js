@@ -44,7 +44,7 @@ const Personal = () => {
       </div>
       <div className="container-fluid justify-content-between row ms-auto">
         {/* Left Column */}
-        <div className="container-fluid col-md-6 text-center text-md-start" style={{ borderRight: "2px solid #FF1975",
+        <div className="container-fluid col-md-6 text-center text-md-start welcome-border" style={{
     paddingTop: 100,
     paddingBottom: 100,
     }}>

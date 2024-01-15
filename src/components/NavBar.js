@@ -199,7 +199,7 @@ const NavBar = ({title}) => {
  }
 
   return (
-    <header id="header" className="header">
+    <header id="header" className="header" style={{zIndex: 40,}}>
     <div className="d-flex flex-column">
 
       <div className="profile">

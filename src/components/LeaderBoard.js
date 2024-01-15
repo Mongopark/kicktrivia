@@ -5,65 +5,81 @@ import LeaderGirl from './icon/LeaderGirl.png';
 import Medal from './icon/Medal.svg';
 
 const Dashboard = () => {
-    const [isNavbarVisible, setNavbarVisible] = useState(true);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+    const [isConfettiHidden, setIsConfettiHidden] = useState(false);
+
+
 
     //   const summonNav = () => {
-    //     setNavbarVisible((prev) => !prev);
+    //     setIsNavbarVisible((prev) => !prev);
     //   };
     
       useEffect(() => {
-    const handleResize = () => {
-        const viewportWidth = window.innerWidth;
-        const navbar = document.getElementById('header');
-        if (viewportWidth >= 992) {
-          // If the screen size is larger than or equal to 992 pixels,
-          // ensure the navbar is visible.
-          setNavbarVisible(true);
-          navbar.style.display = 'block'
-        }
-        if (viewportWidth <= 992) {
-          // If the screen size is larger than or equal to 992 pixels,
-          // ensure the navbar is visible.
-          navbar.style.display = 'none'
-        }
-      };
-  
-      // Add event listener for window resize
-      window.addEventListener('resize', handleResize);
-  
-      // Cleanup the event listener on component unmount
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-      const summonNav = () => {
+        const handleResize = () => {
+          const viewportWidth = window.innerWidth;
           const navbar = document.getElementById('header');
-  
-    if (navbar.style.display === 'none' || navbar.style.display === '') {
-      navbar.style.display = 'block';
-    } else {
-      navbar.style.display = 'none';
-    }
+          if (viewportWidth >= 992) {
+            // If the screen size is larger than or equal to 992 pixels,
+            // ensure the navbar is visible.
+            setIsNavbarVisible(false);
+            navbar.style.display = 'block'
+          }
+          if (viewportWidth <= 992) {
+            // If the screen size is larger than or equal to 992 pixels,
+            // ensure the navbar is visible.
+            navbar.style.display = 'none'
+            setIsNavbarVisible(true);
+          }
+        };
+    
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+    
+        // Cleanup the event listener on component unmount
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
+        const summonNav = () => {
+            const navbar = document.getElementById('header');
+    
+      if (navbar.style.display === 'none' || navbar.style.display === '') {
+        navbar.style.display = 'block';
+        setIsNavbarVisible(false);
+      } else {
+        navbar.style.display = 'none';
+        setIsNavbarVisible(true);
       }
+        }
 
+      useEffect(() => {
+        const timeoutId = setTimeout(() => {
+          setIsConfettiHidden(true);
+        }, 1000);
+    
+        // Clean up the timeout to avoid memory leaks
+        return () => clearTimeout(timeoutId);
+      }, []);
 
     const confettiShapes = Array.from({ length: 100 }, (_, index) => ({
-        left: `${Math.random() * 100}vw`,
+        left: `${(Math.random() * 100)+50}vw`,      
         animationDelay: `${Math.random()}s`,
         backgroundColor: COLORS.confettiColors[Math.floor(Math.random() * COLORS.confettiColors.length)],
         transform: `rotate(${Math.random() * 360}deg)`,
       }));
   return (
-<div className={`row ${isNavbarVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
+<div className={`row ${isNavbarVisible ? 'navbar-visible' : 'navbar-hidden'}`} style={{zIndex: 20, }}>
     <div className="dashboard col-12 col-lg-9 ms-lg-auto ms-3 p-5 h-100" style={{ backgroundColor: COLORS.primary, height: "100%", }}>
     
-    {/* <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
-        <i className="fas fa-bars text-light"></i></div> */}
-        <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
-        <i className="fas fa-bars text-light"></i>
-      </div>
-          {/* Confetti background */}
-      <div className="confetti">
+   {/* <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
+        <i className="fas fa-bars text-light"></i></div> */} 
+  <div className="text-end lead pb-3 d-lg-none d-block" style={{ marginLeft: 'auto', }} onClick={summonNav}>
+  <i className={`fas text-light ${isNavbarVisible?"fa-bars":"fa-x"}`}></i></div>  
+       
+
+<div className="heading">   
+   {/* Confetti background */}
+   {/* <div className="confetti">
         {confettiShapes.map((confettiShape, index) => (
           <div
             key={index}
@@ -72,16 +88,16 @@ const Dashboard = () => {
               position: 'absolute',
               width: '10px',
               height: '10px',
+              zIndex: isConfettiHidden ? 25 : 30,
+              display: isConfettiHidden ? 'none' : 'block',
               background: 'transparent',
               transformOrigin: '50% 50%',
-              animation: 'confettiAnimation 5s infinite',
+              animation: 'confettiAnimation 5s 2',
               ...confettiShape,
             }}
           />
         ))}
-      </div>
-
-<div className="heading">    
+      </div>  */}
     <div><span className="text-light">Hello Stella,</span></div>
 </div>
 <div className="d-flex heading">    

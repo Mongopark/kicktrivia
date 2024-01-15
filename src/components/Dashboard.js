@@ -9,7 +9,7 @@ import User from './icon/User.png';
 import CustomButton from "./layouts/smallbutton";
 
 const Dashboard = () => {
-    const [isNavbarVisible, setNavbarVisible] = useState(true);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -20,44 +20,48 @@ const Dashboard = () => {
       console.log("submit");
      }
 
-//   const summonNav = () => {
-//     setNavbarVisible((prev) => !prev);
-//   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      const viewportWidth = window.innerWidth;
-      const navbar = document.getElementById('header');
-      if (viewportWidth >= 992) {
-        // If the screen size is larger than or equal to 992 pixels,
-        // ensure the navbar is visible.
-        setNavbarVisible(true);
-        navbar.style.display = 'block'
-      }
-      if (viewportWidth <= 992) {
-        // If the screen size is larger than or equal to 992 pixels,
-        // ensure the navbar is visible.
-        navbar.style.display = 'none'
-      }
-    };
-
-    // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-    const summonNav = () => {
-        const navbar = document.getElementById('header');
-
-  if (navbar.style.display === 'none' || navbar.style.display === '') {
-    navbar.style.display = 'block';
-  } else {
-    navbar.style.display = 'none';
-  }
-    }
+     //   const summonNav = () => {
+     //     setIsNavbarVisible((prev) => !prev);
+     //   };
+     
+       useEffect(() => {
+         const handleResize = () => {
+           const viewportWidth = window.innerWidth;
+           const navbar = document.getElementById('header');
+           if (viewportWidth >= 992) {
+             // If the screen size is larger than or equal to 992 pixels,
+             // ensure the navbar is visible.
+             setIsNavbarVisible(false);
+             navbar.style.display = 'block'
+           }
+           if (viewportWidth <= 992) {
+             // If the screen size is larger than or equal to 992 pixels,
+             // ensure the navbar is visible.
+             navbar.style.display = 'none'
+             setIsNavbarVisible(true);
+           }
+         };
+     
+         // Add event listener for window resize
+         window.addEventListener('resize', handleResize);
+     
+         // Cleanup the event listener on component unmount
+         return () => {
+           window.removeEventListener('resize', handleResize);
+         };
+       }, []);
+         const summonNav = () => {
+             const navbar = document.getElementById('header');
+     
+       if (navbar.style.display === 'none' || navbar.style.display === '') {
+         navbar.style.display = 'block';
+         setIsNavbarVisible(false);
+       } else {
+         navbar.style.display = 'none';
+         setIsNavbarVisible(true);
+       }
+         }
 
 
 
@@ -66,12 +70,10 @@ const Dashboard = () => {
 
   return (<div className={`dashboard row ms-3 p-5 h-100 w-100 ${isNavbarVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
     <div className="col-12 col-lg-9 ms-lg-auto" style={{ backgroundColor: COLORS.primary, height: "100%", }}>
-    
-    {/* <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
-        <i className="fas fa-bars text-light"></i></div> */}
-        <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
-        <i className="fas fa-bars text-light"></i>
-      </div>
+      {/* <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
+        <i className="fas fa-bars text-light"></i></div> */} 
+  <div className="text-end lead pb-3 d-lg-none d-block" style={{ marginLeft: 'auto', }} onClick={summonNav}>
+  <i className={`fas text-light ${isNavbarVisible?"fa-bars":"fa-x"}`}></i></div>  
 <div className="d-flex heading">    
     <div><span className="text-light">Hi Stella</span></div>
     <div>
@@ -89,29 +91,30 @@ const Dashboard = () => {
    <div className="row container-fluid my-2 my-md-0 bg-light rounded-3 col-sm-8 col-md-8">
   <div className="container-fluid col-7 align-items-between">
   <div className="container-fluid pt-3 d-flex text-nowrap">
-    Your Wallet Balance <i className={`fas px-4 text-dark ${showPassword ? 'fa-eye-slash' : 'fa-eye'} text-light no-bother`} onClick={togglePasswordVisibility} style={{zIndex: 1000,}}></i>
+    Your Wallet Balance <i className={`fas px-4 text-dark d-md-block d-none ${showPassword ? 'fa-eye-slash' : 'fa-eye'} text-light no-bother`} onClick={togglePasswordVisibility} style={{zIndex: 10,}}></i>
   </div>
-  <div className="container-fluid fw-bold">
+  <div className="container-fluid fw-bold d-flex">
     {showPassword ? '$4500.99' : '****'}
+    <i className={`fas px-4 text-dark d-md-none d-block ${showPassword ? 'fa-eye-slash' : 'fa-eye'} text-light no-bother`} onClick={togglePasswordVisibility} style={{zIndex: 10,}}></i>
   </div>
-  <div className="d-flex mt-4 mb-2 mb-lg-0 smallbtn-cont" style={{ 
+  <div className="mt-4 mb-2 mb-lg-0 d-md-flex d-inline smallbtn-cont" style={{ 
   zIndex: 10,
  }}>
  <button
       type="button"
-      className="btn p-1 smallbtn"
+      className="btn p-1 m-1 smallbtn"
       onClick={onSubmit}
     ><span className="small text-nowrap text-light">Earn More</span>
           </button>
           <button
       type="button"
-      className="btn p-1 mx-1 smallbtns"
+      className="btn p-1 m-1 smallbtns"
       onClick={onSubmit}
     ><span className="small text-nowrap">Deposit</span>
           </button>
           <button
       type="button"
-      className="btn p-1 smallbtns"
+      className="btn p-1 m-1 smallbtns"
       onClick={onSubmit}
     ><span className="small text-nowrap">Withdraw</span>
           </button>

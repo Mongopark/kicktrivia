@@ -13,11 +13,10 @@ import CustomButton from "./layouts/button";
 
 
 const YourUniqueComponent = () => {
-
-  const [isNavbarVisible, setNavbarVisible] = useState(true);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   //   const summonNav = () => {
-  //     setNavbarVisible((prev) => !prev);
+  //     setIsNavbarVisible((prev) => !prev);
   //   };
   
     useEffect(() => {
@@ -27,13 +26,14 @@ const YourUniqueComponent = () => {
         if (viewportWidth >= 992) {
           // If the screen size is larger than or equal to 992 pixels,
           // ensure the navbar is visible.
-          setNavbarVisible(true);
+          setIsNavbarVisible(false);
           navbar.style.display = 'block'
         }
         if (viewportWidth <= 992) {
           // If the screen size is larger than or equal to 992 pixels,
           // ensure the navbar is visible.
           navbar.style.display = 'none'
+          setIsNavbarVisible(true);
         }
       };
   
@@ -50,10 +50,14 @@ const YourUniqueComponent = () => {
   
     if (navbar.style.display === 'none' || navbar.style.display === '') {
       navbar.style.display = 'block';
+      setIsNavbarVisible(false);
     } else {
       navbar.style.display = 'none';
+      setIsNavbarVisible(true);
     }
       }
+
+
 
   const onSubmit = () => {
     console.log("submit");
@@ -65,12 +69,11 @@ const YourUniqueComponent = () => {
   return (
   <div className={`row ${isNavbarVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
   <div className="dashboard col-12 col-lg-9 ms-lg-auto ms-3 p-5 h-100" style={{ backgroundColor: COLORS.primary, height: "100%", }}>
-  
-  {/* <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
-      <i className="fas fa-bars text-light"></i></div> */}
-      <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
-      <i className="fas fa-bars text-light"></i>
-    </div>
+
+   {/* <div className="text-end lead pb-3 d-lg-none d-block" onClick={summonNav}>
+        <i className="fas fa-bars text-light"></i></div> */} 
+  <div className="text-end lead pb-3 d-lg-none d-block" style={{ marginLeft: 'auto', }} onClick={summonNav}>
+  <i className={`fas text-light ${isNavbarVisible?"fa-bars":"fa-x"}`}></i></div>  
       <div className="heading">    
     <div><span className="text-light">Hey Stella,</span></div>
 </div>

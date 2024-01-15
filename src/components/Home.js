@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 // import Header from './Header'
 import Nopage from './Nopage'
@@ -13,10 +14,14 @@ import COLORS from './constants/colors';
 
 
 function App() {
+
+
+
   return (
     <Router>
     <div style={{ backgroundColor: COLORS.primary, display: "flex", }}>
     {/* <Header title={"i got ops"}/> */}
+   
 
     <Routes>
     <Route path="/" exact element={
