@@ -1,16 +1,25 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { Link } from 'react-router-dom';
 import errorsvg from './image/404.svg'
+import {AllProvider, AllContext} from './context/AllContext';
 
 const Nopage = ({title}) => {
-
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
-
+  const {isNavbarVisible, setIsNavbarVisible} = useContext(AllContext);
   //   const summonNav = () => {
   //     setIsNavbarVisible((prev) => !prev);
   //   };
   
     useEffect(() => {
+                  // Set isNavbarVisible to false on page load
+    setIsNavbarVisible(true);
+
+    // Get the navbar element by ID
+    const navbar = document.getElementById('header');
+
+    // Set the initial display style to none
+    navbar.style.display = 'none';
+
+    
       const handleResize = () => {
         const viewportWidth = window.innerWidth;
         const navbar = document.getElementById('header');

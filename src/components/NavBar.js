@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { Link } from 'react-router-dom';
 // import Typed from 'typed.js';
 // import Waypoint from 'react-waypoint';
@@ -10,9 +10,11 @@ import { Link } from 'react-router-dom';
 import Kick from './icon/Kick.png'
 import CustomButton from "./layouts/button";
 import COLORS from './constants/colors';
+import {AllProvider, AllContext} from './context/AllContext';
 
 
 const NavBar = ({title}) => {
+  const {isNavbarVisible, setIsNavbarVisible} = useContext(AllContext);
   const [activeLink, setActiveLink] = useState('');
 
   const handleNavLinkClick = (link) => {
@@ -199,7 +201,7 @@ const NavBar = ({title}) => {
  }
 
   return (
-    <header id="header" className="header" style={{zIndex: 40,}}>
+    <header id="header" className="header" style={{zIndex: 40, }}>
     <div className="d-flex flex-column">
 
       <div className="profile">

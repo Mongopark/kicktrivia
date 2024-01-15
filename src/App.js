@@ -1,14 +1,14 @@
 import Home from './components/Home'
-
+import {AllProvider, AllContext} from './components/context/AllContext';
 
 
 
 function App() {
   return (
-    <div>
+    <AllProvider>
    
     <Home/>
-      </div>
+    </AllProvider>
   );
 }
 

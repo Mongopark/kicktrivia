@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import Base1 from './icon/Base1.svg'
 import Base2 from './icon/Base2.svg'
 import Base3 from './icon/Base3.svg'
@@ -8,18 +8,29 @@ import PlayGirl from './icon/PlayGirl.png'
 import PlayBoy from './icon/PlayBoy.png'
 import COLORS from './constants/colors';
 import CustomButton from "./layouts/button";
+import {AllProvider, AllContext} from './context/AllContext';
 
 
 
 
 const YourUniqueComponent = () => {
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const {isNavbarVisible, setIsNavbarVisible} = useContext(AllContext);
 
   //   const summonNav = () => {
   //     setIsNavbarVisible((prev) => !prev);
   //   };
   
     useEffect(() => {
+                  // Set isNavbarVisible to false on page load
+    setIsNavbarVisible(true);
+
+    // Get the navbar element by ID
+    const navbar = document.getElementById('header');
+
+    // Set the initial display style to none
+    navbar.style.display = 'none';
+
+
       const handleResize = () => {
         const viewportWidth = window.innerWidth;
         const navbar = document.getElementById('header');

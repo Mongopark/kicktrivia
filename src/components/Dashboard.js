@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import DashboardImage from './image/dashboard.jpg'
 import Frame1 from './image/Frame1.png'
 import Frame2 from './image/Frame2.png'
@@ -7,9 +7,10 @@ import Frame4 from './image/Frame4.png'
 import COLORS from './constants/colors';
 import User from './icon/User.png';
 import CustomButton from "./layouts/smallbutton";
+import {AllProvider, AllContext} from './context/AllContext';
 
 const Dashboard = () => {
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const {isNavbarVisible, setIsNavbarVisible} = useContext(AllContext);
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -26,6 +27,16 @@ const Dashboard = () => {
      //   };
      
        useEffect(() => {
+            // Set isNavbarVisible to false on page load
+    setIsNavbarVisible(true);
+
+    // Get the navbar element by ID
+    const navbar = document.getElementById('header');
+
+    // Set the initial display style to none
+    navbar.style.display = 'none';
+
+
          const handleResize = () => {
            const viewportWidth = window.innerWidth;
            const navbar = document.getElementById('header');

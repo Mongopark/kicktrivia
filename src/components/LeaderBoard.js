@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import LeaderBoardImage from './image/leaderboard.jpg'
 import COLORS from './constants/colors';
 import LeaderGirl from './icon/LeaderGirl.png';
 import Medal from './icon/Medal.svg';
+import {AllProvider, AllContext} from './context/AllContext';
 
 const Dashboard = () => {
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const {isNavbarVisible, setIsNavbarVisible} = useContext(AllContext);
     const [isConfettiHidden, setIsConfettiHidden] = useState(false);
 
 
@@ -15,6 +16,16 @@ const Dashboard = () => {
     //   };
     
       useEffect(() => {
+                    // Set isNavbarVisible to false on page load
+    setIsNavbarVisible(true);
+
+    // Get the navbar element by ID
+    const navbar = document.getElementById('header');
+
+    // Set the initial display style to none
+    navbar.style.display = 'none';
+
+
         const handleResize = () => {
           const viewportWidth = window.innerWidth;
           const navbar = document.getElementById('header');
