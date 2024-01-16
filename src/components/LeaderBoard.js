@@ -16,14 +16,14 @@ const Dashboard = () => {
     //   };
     
       useEffect(() => {
-                    // Set isNavbarVisible to false on page load
-    setIsNavbarVisible(true);
+              // Set isNavbarVisible to false on page load
+    // setIsNavbarVisible(true);
 
     // Get the navbar element by ID
     const navbar = document.getElementById('header');
 
     // Set the initial display style to none
-    navbar.style.display = 'none';
+    navbar.style.display = 'block';
 
 
         const handleResize = () => {
